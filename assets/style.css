@@ -5,22 +5,37 @@ html, body {
     padding: 0;
 }
 
-.container {
+.main-container {
     max-width: 100%;
     /* max-height: 100vh; */
     height: 100vh;
-    background: black;
+    background: blue;
+}
+
+/* Sticky header */
+header {
+    position: fixed;
+    top: 0;
+    min-height: 7vh;
+    width: 100%;
 }
 
 .navbar {
-    max-height: 5%;
-    background-color: blue;
-    padding: 2% 2% 0 2%;
+    padding: 2% 4% 0 4%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
 }
 
 .icon-container {
-    height: 50px;
+    display: flex;
+    align-items: center;
 }
+
+.icon-container > a {
+    padding-right: 4vw;
+}
+
+.icon-container img{
+    display: block; /*Getting rid of the white space between the images.*/
+}
+
