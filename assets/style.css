@@ -5,18 +5,25 @@
     --secondary-content-blue: #014593;
 
 }
+
+/* Importing the font-family Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+
 /* Mobile First - screen sizes will start from mobile and media queries will be adjusted to tablet and desktop sizes */
 html, body {
     min-width: 100%;
     margin: 0;
     padding: 0;
     font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .main-container {
     max-width: 100%;
     /* max-height: 100vh; */
     height: 100vh;
+    box-sizing: border-box;
 }
 
 /* Sticky header */
@@ -42,11 +49,13 @@ header {
     padding-right: 4vw;
 }
 
-.icon-container img{
+.icon-container img {
     display: block; /*Getting rid of the white space between the images.*/
 }
-
+/* Main Content formatting */
 .main-content {
+    /* To avoid going outside of parent use border-box */
+    box-sizing: border-box;
     height: 70%;
     /* Adding linear-gradient to have the necessary opacity over the background.*/
     background: 
@@ -54,12 +63,43 @@ header {
     url(background/picture-bg-phone.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* using contain instead of cover to have the image better scaled. */
+    /* Using contain instead of cover to have the image better scaled. */
     background-size: contain;
+    /* Adding padding top (extra) because of the sticky header */
+    padding: 15% 4% 0 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main-content h1 {
+    /* Margin-top: 0 added to avoid the default h1 margin */
+    margin-top: 0;
+    color: var(--main-content-peach);
+    font-size: 3em;
+}
+
+.main-content h4 {
+    color: var(--white);
+    font-size: 1.1em;
+}
+
+.main-content button {
+    width: 100%;
+    height: 7vh;
+    border: none;
+    border-radius: 30px;
+    display: block;
+    margin: 0 auto;
+    background-color: var(--main-content-peach);
+    color: var(--secondary-content-blue);
+    font-size: 1.1em;
+    font-weight: 700;
 }
 
 .secondary-content {
-    height: 30%;
+    padding: 5% 4% 0 4%;
+    height: 30%; 
     background: var(--white);
     color: var(--secondary-content-blue);
 }
