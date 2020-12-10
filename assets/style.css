@@ -1,15 +1,22 @@
+/* Color variables */
+:root {
+    --main-content-peach: #FFDFBA;
+    --white: #FFFFFF; 
+    --secondary-content-blue: #014593;
+
+}
 /* Mobile First - screen sizes will start from mobile and media queries will be adjusted to tablet and desktop sizes */
 html, body {
     min-width: 100%;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 .main-container {
     max-width: 100%;
     /* max-height: 100vh; */
     height: 100vh;
-    background: blue;
 }
 
 /* Sticky header */
@@ -39,3 +46,20 @@ header {
     display: block; /*Getting rid of the white space between the images.*/
 }
 
+.main-content {
+    height: 70%;
+    /* Adding linear-gradient to have the necessary opacity over the background.*/
+    background: 
+    linear-gradient(rgba(1, 69, 147, 0.7),rgba(1, 69, 147, 0.7)),
+    url(background/picture-bg-phone.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* using contain instead of cover to have the image better scaled. */
+    background-size: contain;
+}
+
+.secondary-content {
+    height: 30%;
+    background: var(--white);
+    color: var(--secondary-content-blue);
+}
